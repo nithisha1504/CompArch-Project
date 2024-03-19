@@ -1,6 +1,6 @@
-
 #include "predictor.h"
 #include <math.h>
+
 #define T 1;
 #define NT 0;
 
@@ -9,7 +9,6 @@ unsigned int LPT[1024] = {0};
 unsigned int GPT[4096] = {0};
 unsigned int CPT[4096] = {0};
 unsigned int PR = 0;
-
 unsigned int LPV, GPV, CPV;
 unsigned int LHI; 
 
@@ -18,14 +17,16 @@ bool LP = T;
 bool pred = T;
 
 
-/*********************************Alpa predictor : get_predictor function**************************************/ 
+/*********************************Competition predictor : get_predictor function******************************/ 
 
 bool PREDICTOR::get_prediction(const branch_record_c* br, const op_state_c* os)
 {
   if(br->is_conditional)
   {
       int PC = (br->instruction_addr & 0x00000ffc) >> 2;
-      LHI = LHT[PC]; 
+	  int index;
+	  index = (PC ^ PR ) & 0b1111111111;
+	  LHI = LHT[PC]; 
       LPV = LPT[LHI] & 0b111;
       
       if(LPV <=3)
@@ -37,7 +38,7 @@ bool PREDICTOR::get_prediction(const branch_record_c* br, const op_state_c* os)
           LP = T;
       }
       
-      // Global prediction
+      // Global prediction 
       GPV = GPT[PR] & 0b11;
       if(GPV <=1)
       {
@@ -69,17 +70,20 @@ bool PREDICTOR::get_prediction(const branch_record_c* br, const op_state_c* os)
     return pred;
 }
 
-/*********************************Alpa predictor : update_predictor function****************************/
 
+/*********************************competition predictor : update_predictor function******************************/ 
 void PREDICTOR::update_predictor(const branch_record_c* br, const op_state_c* os, bool taken)
 {
       int PC = (br->instruction_addr & 0x00000ffc) >> 2;
-      LHI = LHT[PC] ;
+	  int index;
+	  index = (PC ^ PR ) & 0b1111111111;
+      LHI = LHT[index] ;
       LPV = LPT[LHI] & 0b111;
       GPV = GPT[PR] & 0b11;
       CPV = CPT[PR] & 0b11;
     
-	if (taken) {
+    
+    if (taken) {
         
         if (LPV < 7)
         {
@@ -146,7 +150,3 @@ void PREDICTOR::update_predictor(const branch_record_c* br, const op_state_c* os
     PR = ((PR << 1) + taken) & 0b111111111111;
 
 }
-
-
-
-
