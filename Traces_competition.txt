@@ -1,0 +1,144 @@
+chevuru@rita:~/Documents/ECE586/project/framework$ make
+g++ -g -Wall   -c -o predictor.o predictor.cc
+g++ -o predictor cbp_inst.o main.o op_state.o predictor.o tread.o
+chevuru@rita:~/Documents/ECE586/project/framework$ ./predictor PredictorTraces/DIST-FP-1
+*********************************************************
+1000*wrong_cc_predicts/total insts: 1000 *    99327 / 29499988 =   3.367
+total branches:                   2616522
+total cc branches:                2213673
+total predicts:                   2213673
+*********************************************************
+chevuru@rita:~/Documents/ECE586/project/framework$ ./predictor PredictorTraces/DIST-FP-2
+*********************************************************
+1000*wrong_cc_predicts/total insts: 1000 *    38506 / 29499869 =   1.305
+total branches:                   1805454
+total cc branches:                1792835
+total predicts:                   1792835
+*********************************************************
+chevuru@rita:~/Documents/ECE586/project/framework$ ./predictor PredictorTraces/DIST-FP-3
+*********************************************************
+1000*wrong_cc_predicts/total insts: 1000 *    15440 / 29499978 =   0.523
+total branches:                   1573540
+total cc branches:                1546797
+total predicts:                   1546797
+*********************************************************
+chevuru@rita:~/Documents/ECE586/project/framework$ ./predictor PredictorTraces/DIST-FP-4
+*********************************************************
+1000*wrong_cc_predicts/total insts: 1000 *     8752 / 29499976 =   0.297
+total branches:                    921402
+total cc branches:                 895842
+total predicts:                    895842
+*********************************************************
+chevuru@rita:~/Documents/ECE586/project/framework$ ./predictor PredictorTraces/DIST-FP-5
+*********************************************************
+1000*wrong_cc_predicts/total insts: 1000 *    23416 / 29499969 =   0.794
+total branches:                   2722674
+total cc branches:                2422049
+total predicts:                   2422049
+*********************************************************
+chevuru@rita:~/Documents/ECE586/project/framework$ ./predictor PredictorTraces/DIST-INT-1
+*********************************************************
+1000*wrong_cc_predicts/total insts: 1000 *   218110 / 29499987 =   7.394
+total branches:                   4989048
+total cc branches:                4184792
+total predicts:                   4184792
+*********************************************************
+chevuru@rita:~/Documents/ECE586/project/framework$ ./predictor PredictorTraces/DIST-INT-2
+*********************************************************
+1000*wrong_cc_predicts/total insts: 1000 *   329645 / 29499985 =  11.174
+total branches:                   3671448
+total cc branches:                2866495
+total predicts:                   2866495
+*********************************************************
+chevuru@rita:~/Documents/ECE586/project/framework$ ./predictor PredictorTraces/DIST-INT-3
+*********************************************************
+1000*wrong_cc_predicts/total insts: 1000 *   363195 / 29499978 =  12.312
+total branches:                   4136429
+total cc branches:                3771697
+total predicts:                   3771697
+*********************************************************
+chevuru@rita:~/Documents/ECE586/project/framework$ ./predictor PredictorTraces/DIST-INT-4
+*********************************************************
+1000*wrong_cc_predicts/total insts: 1000 *    72790 / 29499960 =   2.467
+total branches:                   2432848
+total cc branches:                2069894
+total predicts:                   2069894
+*********************************************************
+chevuru@rita:~/Documents/ECE586/project/framework$ ./predictor PredictorTraces/DIST-INT-5
+*********************************************************
+1000*wrong_cc_predicts/total insts: 1000 *    12789 / 29499990 =   0.434
+total branches:                   3818636
+total cc branches:                3755315
+total predicts:                   3755315
+*********************************************************
+chevuru@rita:~/Documents/ECE586/project/framework$ ./predictor PredictorTraces/DIST-MM-1
+*********************************************************
+1000*wrong_cc_predicts/total insts: 1000 *   241121 / 29499979 =   8.174
+total branches:                   2784449
+total cc branches:                2229289
+total predicts:                   2229289
+*********************************************************
+chevuru@rita:~/Documents/ECE586/project/framework$ ./predictor PredictorTraces/DIST-MM-2
+*********************************************************
+1000*wrong_cc_predicts/total insts: 1000 *   320666 / 29499970 =  10.870
+total branches:                   4213315
+total cc branches:                3809780
+total predicts:                   3809780
+*********************************************************
+chevuru@rita:~/Documents/ECE586/project/framework$ ./predictor PredictorTraces/DIST-MM-3
+*********************************************************
+1000*wrong_cc_predicts/total insts: 1000 *    76077 / 29499970 =   2.579
+total branches:                   4953146
+total cc branches:                3014850
+total predicts:                   3014850
+*********************************************************
+chevuru@rita:~/Documents/ECE586/project/framework$ ./predictor PredictorTraces/DIST-MM-4
+*********************************************************
+1000*wrong_cc_predicts/total insts: 1000 *    67149 / 29499993 =   2.276
+total branches:                   5084440
+total cc branches:                4874888
+total predicts:                   4874888
+*********************************************************
+chevuru@rita:~/Documents/ECE586/project/framework$ ./predictor PredictorTraces/DIST-MM-5
+*********************************************************
+1000*wrong_cc_predicts/total insts: 1000 *   214240 / 29499791 =   7.262
+total branches:                   3406316
+total cc branches:                2563897
+total predicts:                   2563897
+*********************************************************
+chevuru@rita:~/Documents/ECE586/project/framework$ ./predictor PredictorTraces/DIST-SERV-1
+*********************************************************
+1000*wrong_cc_predicts/total insts: 1000 *   464411 / 29499316 =  15.743
+total branches:                   5607148
+total cc branches:                3660616
+total predicts:                   3660616
+*********************************************************
+chevuru@rita:~/Documents/ECE586/project/framework$ ./predictor PredictorTraces/DIST-SERV-2
+*********************************************************
+1000*wrong_cc_predicts/total insts: 1000 *   491258 / 29499198 =  16.653
+total branches:                   5443962
+total cc branches:                3537562
+total predicts:                   3537562
+*********************************************************
+chevuru@rita:~/Documents/ECE586/project/framework$ ./predictor PredictorTraces/DIST-SERV-3
+*********************************************************
+1000*wrong_cc_predicts/total insts: 1000 *   295384 / 29499817 =  10.013
+total branches:                   5358488
+total cc branches:                3811906
+total predicts:                   3811906
+*********************************************************
+chevuru@rita:~/Documents/ECE586/project/framework$ ./predictor PredictorTraces/DIST-SERV-4
+*********************************************************
+1000*wrong_cc_predicts/total insts: 1000 *   425130 / 29498081 =  14.412
+total branches:                   6299843
+total cc branches:                4266796
+total predicts:                   4266796
+*********************************************************
+chevuru@rita:~/Documents/ECE586/project/framework$ ./predictor PredictorTraces/DIST-SERV-5
+*********************************************************
+1000*wrong_cc_predicts/total insts: 1000 *   457199 / 29497759 =  15.499
+total branches:                   6411192
+total cc branches:                4291964
+total predicts:                   4291964
+*********************************************************
+chevuru@rita:~/Documents/ECE586/project/framework$ 
